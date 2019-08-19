@@ -10,7 +10,8 @@ public class Recursividade {
 
     public static void main(String[] args) {
         //listaConteudo(new File(".")); // Diretório corrente
-        contagemRegressiva(10);
+        //contagemRegressiva(10);
+        System.out.println(potencia(5, 0));
     }
 
     /**
@@ -44,5 +45,19 @@ public class Recursividade {
             System.out.println(n);
             contagemRegressiva(n - 1);
         }
+    }
+    
+    /**
+     * Método que recebe uma base e um expoente e retorna a potencia entre eles.
+     * @param base base
+     * @param expoente expoente
+     * @return retorna a potencia entre a base e o expoente.
+     */
+    private static int potencia(int base, int expoente){
+        if(expoente == 0){
+            return 1;
+        }
+        
+        return base * potencia(base, expoente - 1);
     }
 }
